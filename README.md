@@ -1,5 +1,5 @@
 # Analysis_on_TaihuLight
-##Pre_processing
+## Pre_processing
 This dictory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
 
 ### Json_pretreament/*.py
@@ -62,7 +62,7 @@ This dictory contains Python scripts that are responsible for extracting data fr
 ### Benchmark/*
  - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
 
-##Experiment_result
+## Experiment_result
 The dictory directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study, includes four components:
 
 ### Comp_load_analysis
