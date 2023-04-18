@@ -1,0 +1,10 @@
+Xtick=[0.1 1 5 20 100];
+xtickname={'0', '1', '5', '20', '100'};  
+Y=[0.00001 61.84 77.27 99.59 100];
+semilogx(Xtick,Y,'Linewidth',1);
+legend('OST');
+set(gca, 'XTick', Xtick, 'XTickLabel', xtickname, 'Fontname', 'Arial', 'Fontsize', 20);
+xlim([0 100]);
+ylim([0 100]);
+xlabel('Average OST load (%)','Fontweight','bold', 'Fontname', 'Arial', 'Fontsize', 20);
+ylabel('Pencentage of system time (%)','Fontweight','bold', 'Fontname', 'Arial', 'Fontsize', 20);
