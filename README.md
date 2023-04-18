@@ -4,7 +4,7 @@ This dictory contains Python scripts that are responsible for extracting data fr
 
 ### 1.1 Json_pretreament/*.py
  - interface.py:
-    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server)
+    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server)n \
     @param st: startdate (datetime '%Y-%m-%d')
     @param et: enddate (datetime '%Y-%m-%d)
     @param json_type: type of data (ost1 represent luser_server, comp represent lwfs_client)
