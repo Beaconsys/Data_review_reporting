@@ -3,21 +3,21 @@
 This dictory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
 
 ### 1.1 Json_pretreament/*.py
- - interface.py:
-    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server)n \
-    @param st: startdate (datetime '%Y-%m-%d')
-    @param et: enddate (datetime '%Y-%m-%d)
+ - interface.py:\
+    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server) \
+    @param st: startdate (datetime '%Y-%m-%d') \
+    @param et: enddate (datetime '%Y-%m-%d) \
     @param json_type: type of data (ost1 represent luser_server, comp represent lwfs_client)
 
- - lustre_client_parse.py:
-    the interface to handle Json to Analysed secondly data (for lustre_client)
-    @param st: startdate (datetime '%Y-%m-%d')
+ - lustre_client_parse.py:\
+    the interface to handle Json to Analysed secondly data (for lustre_client) \
+    @param st: startdate (datetime '%Y-%m-%d') \
     @param et: enddate (datetime '%Y-%m-%d)
 
- - lwfs_client_parse.py:
-    the interface to handle Json to Analysed secondly data (for lustre_client(format_type = old))
-    @param st: startdate (datetime '%Y-%m-%d')
-    @param et: enddate (datetime '%Y-%m-%d)
+ - lwfs_client_parse.py:\
+    the interface to handle Json to Analysed secondly data (for lustre_client(format_type = old)) \
+    @param st: startdate (datetime '%Y-%m-%d') \
+    @param et: enddate (datetime '%Y-%m-%d) \
 
  - config.py:
     record Json path and Analysed secondly data path
