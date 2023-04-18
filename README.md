@@ -19,19 +19,19 @@ This dictory contains Python scripts that are responsible for extracting data fr
     @param st: startdate (datetime '%Y-%m-%d') \
     @param et: enddate (datetime '%Y-%m-%d) \
 
- - config.py:
+ - config.py:\
     record Json path and Analysed secondly data path
 
- - lustre_server.py:
+ - lustre_server.py:\
     the functions to parse luster_server Json
 
- - lustre_client.py:
+ - lustre_client.py:\
     the functions to parse luster_client Json
 
- - lwfs_client.py:
+ - lwfs_client.py:\
     the functions to parse lwfs_client Json
 
- - utils.py:
+ - utils.py:\
     the method functions
 
 ### 1.2 Get_comp_load.py
@@ -47,16 +47,16 @@ This dictory contains Python scripts that are responsible for extracting data fr
  - The program is used to obtain the applicaitons I/O performance from the Beacon database. It is also responsible for clustering them according to I/O performance characteristics, and then saves the data.
 
 ### 1.6 Handle_file/*.py
- - redisfile.py
+ - redisfile.py: \
     handle Analysed secondly data to find jobs queue which access the same file
 
- - scan.py:
+ - scan.py:\
     scan mysql and find jobs
 
- - handle_filequeue.py:
+ - handle_filequeue.py:\
     scan the share files and get the job queue distribution and job access files distribution
 
- - get_ip.py:
+ - get_ip.py
     convert the job using compute node list to ip list
 
 ### 1.7 Benchmark/*
