@@ -10,9 +10,9 @@ This paper presents a comprehensive and detailed analysis of the system and job 
 
 Beacon collects all data used in this paper on the Sunway TaihuLight. These data include computing nodes, forwarding nodes, storage nodes, and job-running information. We have no authority to open the access or provide a simulator to access the Beacon or all these data. However, Beacon's code and part of the collected data (The data is processed to hide the user's information) can be accessed through the link blew: https://github.com/Beaconsys/Beacon.
 
-### 2.2 processing scripts
+### 2.2 processing and analysis scripts
 
-The "Pre-processing" directory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures. Details can be seen in the README file.
+The "processing" directory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
 
 #### 2.2.1 Json_pretreament/*.py
  - interface.py:\
@@ -74,18 +74,4 @@ The "Pre-processing" directory contains Python scripts that are responsible for 
 #### 2.2.7 Benchmark/*
  - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
 
-### 2.3 Experiment_result
-
-The "Experiment_results" directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study. The ".m" files represent data processing scripts that can be executed directly through Matlab, the ".mat" files represent the data utilized during processing, and the resulting images are shared in PDF format. Our work in this paper can be divided into the following four parts:
-
-#### 2.3.1 Comp_load_analysis
- - The first part analyzes the load on the compute nodes, examining the load variation over time, the behavior of users submitting jobs over the day, etc. The results can be found in /Experiment_results/Comp_load_analysis, corresponding to Figures 3 to 7 in this paper.
-
-#### 2.3.2 Sys_load_analysis
- - The second part analyzes the system nodes' load and anomalies and investigates the system's load imbalance phenomenon and fault anomaly trends. The results can be found in /Experiment_results/Sys_load_analysis, corresponding to Figures 8 to 12 in this paper.
-
-#### 2.3.3 Job_runnig_information
- - The third part analyzes the job-running information and shows the average job parallelism, job running time, job waiting time, etc. The results can be found in /Experiment_results/Job_runnig_information, corresponding to Figures 13 to 14 in this paper.
-
-#### 2.3.4 Job_io_performance
- - The fourth part analyzes the I/O behavior of the job, and the study is carried out in terms of the changing trend of the job's I/O pattern, the io library that jobs used, the overall job I/O performance, and the file access patterns. The results can be found in /Experiment_results/Job_io_performance, corresponding to Figure 15 to Figure 19 in this paper.
+#### 2.2.8 Simulation for job scheduler
