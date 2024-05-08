@@ -1,5 +1,7 @@
 # Full Lifecycle Data Analysis on a Large-scale and Leadership Supercomputer: What Can We Learn from It?
+
 ## 1 Getting Started Instructions
+
 This paper presents a comprehensive and detailed analysis of the system and job characteristics on a cutting-edge computing system, Sunway TaihuLight supercomputer. Our study offers valuable insights into trends in I/O performance, as well as the challenges and opportunities for improvement in high-performance computing environments. We present our methodology, findings, and the significance of our study. Analysis scripts, data, and figures can be accessed in Section 2. These results have significant implications for the design, optimization, and management of HPC systems, as well as the development of more efficient data-intensive applicaitons. Additionally, we discuss the implications of our findings for future research and practice in this area.
 This project will show our data processing and analyzing scripts, as well as data collected by Beacon (An open-source and lightweight collecting tool). 
 Details see blow.
@@ -7,16 +9,14 @@ Details see blow.
 ## 2 Detailed Instructions
 
 ### 2.1 About Beacon and Data.
-Open-source data and collection tool, Please see GitHub Link: https://github.com/Beaconsys/Beacon
+
+Beacon collects all data used in this paper on the Sunway TaihuLight. These data include computing nodes, forwarding nodes, storage nodes, and job-running information. We have no authority to open the access or provide a simulator to access the Beacon or all these data. However, Beacon's code and part of the collected data (The data is processed to hide the user's information) can be accessed through the link blew: https://github.com/Beaconsys/Beacon.
 
 ### 2.2 processing scripts
 
-This dictory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
+The "Pre-processing" directory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures. Details can be seen in the README file.
 
-The dictory directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study, includes four components:
-
-
-### 1.1 Json_pretreament/*.py
+### 2.2 Json_pretreament/*.py
  - interface.py:\
     the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server) \
     @param st: startdate (datetime '%Y-%m-%d') \
@@ -77,7 +77,13 @@ The dictory directory showcases data processing scripts, data files, and generat
  - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
 
 ## 2.3 Experiment_result
-The dictory directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study, includes four components:
+
+The "Experiment_results" directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study. The ".m" files represent data processing scripts that can be executed directly through Matlab, the ".mat" files represent the data utilized during processing, and the resulting images are shared in PDF format. Our work in this paper can be divided into the following four parts:
+\begin{enumerate}
+\item The first part analyzes the load on the compute nodes, examining the load variation over time, the behavior of users submitting jobs over the day, etc. The results can be found in /Experiment results/Comp_load_analysis, which corresponds to Figures 3 to 7 in this paper.
+\item The second part analyzes the load and anomalies of the system nodes and investigates the uneven load phenomenon and fault anomalies in the system, and the results can be found in /Experiment results/Sys_load_analysis, which corresponds to Figures 8 to 12 in this paper.
+\item The third part analyzes the job-running information, examining the average parallelism, running time, and waiting time of jobs, and the results can be found in /Experiment results/Job_runnig_information, corresponding to Figures 13 to 14 in this paper.
+\item The fourth part analyzes the I/O behavior of the job, and the study is carried out in terms of the changing trend of the I/O pattern of the job, the io library used, the overall I/O performance of the job, and the file access characteristics, etc. The results can be found in /Experiment results/Job_io_performance, which correspond to Figure 15 to Figure 19 in this paper.
 
 ### 2.1 Comp_load_analysis
  - The first part analyzes the load on the compute nodes, examining the load variation over time, the behavior of users submitting jobs over the day, etc. The results can be found in /Experiment_results/Comp_load_analysis, corresponding to Figures 3 to 7 in this paper.
