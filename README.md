@@ -1,6 +1,20 @@
-# Analysis_on_TaihuLight
-## 1 Pre_processing
+# Full Lifecycle Data Analysis on a Large-scale and Leadership Supercomputer: What Can We Learn from It?
+## 1 Getting Started Instructions
+This paper presents a comprehensive and detailed analysis of the system and job characteristics on a cutting-edge computing system, Sunway TaihuLight supercomputer. Our study offers valuable insights into trends in I/O performance, as well as the challenges and opportunities for improvement in high-performance computing environments. We present our methodology, findings, and the significance of our study. Analysis scripts, data, and figures can be accessed in Section 2. These results have significant implications for the design, optimization, and management of HPC systems, as well as the development of more efficient data-intensive applicaitons. Additionally, we discuss the implications of our findings for future research and practice in this area.
+This project will show our data processing and analyzing scripts, as well as data collected by Beacon (An open-source and lightweight collecting tool). 
+Details see blow.
+
+## 2 Detailed Instructions
+
+### 2.1 About Beacon and Data.
+Open-source data and collection tool, Please see GitHub Link: https://github.com/Beaconsys/Beacon
+
+### 2.2 processing scripts
+
 This dictory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
+
+The dictory directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study, includes four components:
+
 
 ### 1.1 Json_pretreament/*.py
  - interface.py:\
@@ -62,7 +76,7 @@ This dictory contains Python scripts that are responsible for extracting data fr
 ### 1.7 Benchmark/*
  - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
 
-## 2 Experiment_result
+## 2.3 Experiment_result
 The dictory directory showcases data processing scripts, data files, and generated images corresponding to each experiment presented in this study, includes four components:
 
 ### 2.1 Comp_load_analysis
