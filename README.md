@@ -2,7 +2,7 @@
 
 ## 1 Getting Started Instructions
 
-This paper presents a comprehensive and detailed analysis of the system and job characteristics on a cutting-edge computing system, Sunway TaihuLight supercomputer. Our study offers valuable insights into trends in I/O performance, as well as the challenges and opportunities for improvement in high-performance computing environments. We present our methodology, findings, and the significance of our study. These results have significant implications for the design, optimization, and management of HPC systems, as well as the development of more efficient data-intensive applicaitons. Additionally, we discuss the implications of our findings for future research and practice in this area. This project will show our data processing and analyzing scripts, as well as data collected by Beacon (An open-source and lightweight collecting tool). Details see blow.
+This study presents a comprehensive and detailed analysis of the system and job characteristics on a cutting-edge computing system, Sunway TaihuLight supercomputer. Our study offers valuable insights into trends in I/O performance, as well as the challenges and opportunities for improvement in high-performance computing environments. We present our methodology, findings, and the significance of our study. These results have significant implications for the design, optimization, and management of HPC systems, as well as the development of more efficient data-intensive applicaitons. Additionally, we discuss the implications of our findings for future research and practice in this area. This project will show our data processing and analyzing scripts, as well as data collected by Beacon (An open-source and lightweight collecting tool). Details see blow.
 
 ## 2 Detailed Instructions
 
@@ -12,9 +12,11 @@ Beacon collects all data used in this paper on the Sunway TaihuLight. These data
 
 ### 2.2 processing and analysis scripts
 
-The "processing" directory contains Python scripts that are responsible for extracting data from Beacon's database and performing necessary pre-processing procedures.
+The "Data_processing" directory contains Python scripts that are responsible for extracting data from Beacon's collected data and performing data analysis.
 
-#### 2.2.1 Json_pretreament/*.py
+#### 2.2.1 Rawdata_pre-processing/*.py
+The code in this directory is mainly used to process the raw data collected by the beacon (json file, see this URL for details):
+
  - interface.py:\
     the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server) \
     @param st: startdate (datetime '%Y-%m-%d') \
@@ -46,19 +48,24 @@ The "processing" directory contains Python scripts that are responsible for extr
  - utils.py:\
     the method functions
 
-#### 2.2.2 Get_comp_load.py
- - The program will process the overall information of compute node, and obtain the abnormal job statistics, job information of jobs submitted in different time periods.
+#### 2.2.2 Load_analysis/*.py 
+The code in this directory is mainly used to get load information of nodes in each layer of TaihuLight and jobs' I/O performance:
 
-#### 2.2.3 Get_fwd_load.py:
- - The program processes fowarding nodes data to hourly data to show
+ - Get_comp_load.py
+   The program will process the overall information of compute node, and obtain the abnormal job statistics, job information of jobs submitted in different time periods.
 
-#### 2.2.4 Get_ost_load.py:
- - The program processes OSTs data to hourly data to show
+ - Get_fwd_load.py:
+   The program processes fowarding nodes data to hourly data to show
 
-#### 2.2.5 Get_app_IO_perf.py
- - The program is used to obtain the applicaitons I/O performance from the Beacon database. It is also responsible for clustering them according to I/O performance characteristics, and then saves the data.
+ - 2.2.4 Get_ost_load.py:
+   The program processes OSTs data to hourly data to show
 
-#### 2.2.6 Handle_file/*.py
+ - Get_app_IO_perf.py
+   The program is used to obtain the applicaitons I/O performance from the Beacon database. It is also responsible for clustering them according to I/O performance characteristics, and then saves the data.
+
+#### 2.2.3 File_analysis/*.py
+The code in this directory focuses on some analysis of the job's access to the file：
+
  - redisfile.py: \
     handle Analysed secondly data to find jobs queue which access the same file
 
@@ -68,10 +75,11 @@ The "processing" directory contains Python scripts that are responsible for extr
  - handle_filequeue.py:\
     scan the share files and get the job queue distribution and job access files distribution
 
- - get_ip.py
-    convert the job using compute node list to ip list
+#### 2.2.4 Scheduler_simulation/*.py
+The code in this directory focuses on the simulation of some job scheduling algorithms, including job running information：
 
-#### 2.2.7 Benchmark/*
+ - Scheduling.py:\
+   evaluate the strengths and weaknesses of each scheduling algorithm using information from job runs over a period of time
+
+#### 2.2.5 IO_Benchmark/*
  - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
-
-#### 2.2.8 Simulation for job scheduler
