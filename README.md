@@ -15,7 +15,7 @@ Beacon collects all data used in this paper on the Sunway TaihuLight. These data
 The "Data_processing" directory contains Python scripts that are responsible for extracting data from Beacon's collected data and performing data analysis.
 
 #### 2.2.1 Rawdata_pre-processing/*.py
-The code in this directory is mainly used to process the raw data collected by the beacon (json file, see this URL for details):
+The code in this directory is mainly used to process the raw data collected by the beacon (json file, see the above URL for details):
 
  - interface.py:\
     the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server) \
