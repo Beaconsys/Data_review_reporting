@@ -1,7 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# @Time     : 2020/7/20 15:52
-# @Author   : xhzhang
 # @Site     :
 # @File     : lustre_client.py
 # @Software : PyCharm
@@ -283,54 +281,5 @@ def parse_lustre_client_data(results,
                 format_data[host].append([htime, r_data])
             except Exception:
                 print('Row data exception', result)
-    '''
-    if source == "es":
-        assert isinstance(results, list)
-        for result in results:
-            try:
-                host = result['host']
-                message = result['message']
-                if source == 'old':
-                    htime = result['htime']
-                    message_info = message.split(" ", maxsplit=1)
-                    ost_num = message_info[0]
-                    if ost_num == "cache_hit":
-                        cache_info = message.split(" ")
-                        cache_hit = int(cache_info[1])
-                        cache_miss = int(cache_info[3])
-                        cache_discard = int(cache_info[5])
-                        data = [cache_hit, cache_miss, cache_discard]
-                        r_data = ["cache", data]
-                    else:
-                        data = eval(message_info[1])
-                        r_data = [ost_num, data]
-                else:
-                    message_info = eval(message)
-                    htime = message_info[0]
-                    ost_num = message_info[1]
-                    if ost_num == "cache":
-                        data = message_info[2:]
-                    else:
-                        data = message_info[2]
-                    r_data = [ost_num, data]
-                if host not in format_data:
-                    format_data[host] = []
-                format_data[host].append([htime, r_data])
-            except Exception as e:
-                pass
-    else:
-        assert isinstance(results, dict)
-        #format_data = results
-        for host, values in results.items():
-            for raw_data in values:
-                try:
-                    if host not in format_data:
-                        format_data[host] = []
-                    format_data[host].append(
-                        [raw_data[0], [raw_data[1],
-                                       eval(raw_data[2])]])
-                except Exception as e:
-                    print(str(e))
-    '''
     result = analyze_lustre_client_data(format_data, start, end)
     return result

@@ -1,7 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# @Time     : 2020/7/20 15:52
-# @Author   : xhzhang
 # @Site     :
 # @File     : lustre_server.py
 # @Software : PyCharm

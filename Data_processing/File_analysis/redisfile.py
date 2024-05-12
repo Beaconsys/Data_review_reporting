@@ -2,7 +2,7 @@ import sys
 from get_ip import *
 from utils import *
 
-FILEINFOPATH = '/home/raid/beacon/liusc/zhuwh/workspace/fileinfoscan/fileonly/'
+FILEINFOPATH = 'data/fileinfoscan/fileonly/'
 
 
 def handlejobs():

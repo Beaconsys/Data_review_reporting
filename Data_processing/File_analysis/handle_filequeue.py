@@ -6,7 +6,7 @@ import sys
 from utils import *
 inter_distrit = [0 for i in range(15)]
 inter_jud = [math.pow(2, i) for i in range(15)]
-with open('sc_data/filequeue_csv', 'r') as f:
+with open('data/filequeue_csv', 'r') as f:
     data = f.readlines()
 count = 0
 res = []

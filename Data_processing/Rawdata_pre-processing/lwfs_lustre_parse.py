@@ -1,9 +1,7 @@
 import json
-import redis
 import gc
 #from sharefunc import *
 import traceback
-from op_re_lwfs_client import *
 from lwfs_client_parse import *
 from utils import *
 from config import *
