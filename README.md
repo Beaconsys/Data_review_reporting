@@ -88,7 +88,7 @@ The code in this directory focuses on analysis of files that accessed by jobs (d
  - utils.py:\
     the method functions
 
-#### 2.2.4 Scheduler_simulation/*
+### 2.3 Scheduler_simulation/*
 The code in this directory focuses on the simulation of some job scheduling algorithms, including data (data.csv, real-work job running information). 
 
  - @usage: python Scheduling.py
@@ -98,7 +98,3 @@ The code in this directory focuses on the simulation of some job scheduling algo
 
  - data.csv:\
    job running information for a period of time
-
-#### 2.2.5 IO_Benchmark/*
-Two C language programs under the folder are codes for parallel I/O in N-1 I/O mode, and run.sh is a shell script  for compiling and submitting the two programs.
- - @usage: sh run.sh
