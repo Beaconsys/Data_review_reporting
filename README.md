@@ -64,7 +64,7 @@ The code in this directory is mainly used to get load information of nodes in ea
    The program is used to obtain the applicaitons I/O performance from the Beacon database. It is also responsible for clustering them according to I/O performance characteristics, and then saves the data.
 
 #### 2.2.3 File_analysis/*.py
-The code in this directory focuses on analysis of the jobs' access to files：
+The code in this directory focuses on analysis of files that accessed by jobs：
 
  - redisfile.py: \
     handle Analysed secondly data to find jobs queue which access the same file
@@ -76,13 +76,13 @@ The code in this directory focuses on analysis of the jobs' access to files：
     scan the share files and get the job queue distribution and job access files distribution
 
 #### 2.2.4 Scheduler_simulation/*
-The code in this directory focuses on the simulation of some job scheduling algorithms, including job running information：
+The code in this directory focuses on the simulation of some job scheduling algorithms, including the real-work job running information. 
 
  - Scheduling.py:\
-   evaluate the strengths and weaknesses of each scheduling algorithm using information from job runs over a period of time
+   evaluate the strengths and weaknesses of each scheduling algorithm using information from job runs over a period of time.
 
  - data.csv:\
-   job running information
+   job running information for a period of time
 
 #### 2.2.5 IO_Benchmark/*
- - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
+ - Two C language programs under the folder are codes for parallel I/O in N-1 I/O mode, and run.sh is a shell script  for compiling and submitting the two programs.
