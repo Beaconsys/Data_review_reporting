@@ -15,27 +15,30 @@ Beacon collects all data used in this paper on the Sunway TaihuLight. These data
 The "Data_processing" directory contains Python scripts that are responsible for extracting data from Beacon's collected data and performing data analysis.
 
 #### 2.2.1 Rawdata_pre-processing/*.py
-The code in this directory is mainly used to process the raw data collected by the beacon (json file, see this URL for details):
+The code in this directory is mainly used to process the raw data collected by the beacon (json file, part of the raw data can be accessed through the URL above):
 
- - interface.py:\
-    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) ,lustre_server) \
+ - lwfs_lustre_parse.py:\
+    the interface to handle Json to Analysed secondly data (for lwfs_client(format_type = new) or lustre_server) \
+    @usage: python lwfs_lustre_parse.py st et json_type
     @param st: startdate (datetime '%Y-%m-%d') \
     @param et: enddate (datetime '%Y-%m-%d) \
     @param json_type: type of data (ost1 represent luser_server, comp represent lwfs_client)
 
  - lustre_client_parse.py:\
     the interface to handle Json to Analysed secondly data (for lustre_client) \
+    @usage: python lustre_client_parse.py st et
     @param st: startdate (datetime '%Y-%m-%d') \
     @param et: enddate (datetime '%Y-%m-%d)
 
  - lwfs_client_parse.py:\
     the interface to handle Json to Analysed secondly data (for lustre_client(format_type = old)) \
+    @usage: python lwfs_client_parse.py st et
     @param st: startdate (datetime '%Y-%m-%d') \
     @param et: enddate (datetime '%Y-%m-%d) \
 
  - config.py:\
     record Json path and Analysed secondly data path
-
+   
  - lustre_server.py:\
     the functions to parse luster_server Json
 
@@ -49,7 +52,9 @@ The code in this directory is mainly used to process the raw data collected by t
     the method functions
 
 #### 2.2.2 Load_analysis/*.py 
-The code in this directory is mainly used to get load information of nodes in each layer of TaihuLight and jobs' I/O performance:
+The code in this directory is mainly used to get load information of nodes in each layer of TaihuLight and jobs' I/O performance (data used in the following code should be pre-processed):
+
+ - @usage: python *.py
 
  - Get_comp_load.py
    The program will process the overall information of compute node, and obtain the abnormal job statistics, job information of jobs submitted in different time periods.
@@ -57,29 +62,43 @@ The code in this directory is mainly used to get load information of nodes in ea
  - Get_fwd_load.py:
    The program processes fowarding nodes data to hourly data to show
 
- - 2.2.4 Get_ost_load.py:
+ - Get_ost_load.py:
    The program processes OSTs data to hourly data to show
 
  - Get_app_IO_perf.py
    The program is used to obtain the applicaitons I/O performance from the Beacon database. It is also responsible for clustering them according to I/O performance characteristics, and then saves the data.
 
-#### 2.2.3 File_analysis/*.py
-The code in this directory focuses on some analysis of the job's access to the file：
+ - utils.py:\
+    the method functions
 
+#### 2.2.3 File_analysis/*.py
+The code in this directory focuses on analysis of files that accessed by jobs (data used in the following code should be pre-processed)：
+
+ - @usage: python *.py
+ 
  - redisfile.py: \
-    handle Analysed secondly data to find jobs queue which access the same file
+    handle Analysed secondly data to find jobs which access the same file
 
  - scan.py:\
-    scan mysql and find jobs
+    scan in mysql to find target jobs
 
  - handle_filequeue.py:\
     scan the share files and get the job queue distribution and job access files distribution
+   
+ - utils.py:\
+    the method functions
 
-#### 2.2.4 Scheduler_simulation/*.py
-The code in this directory focuses on the simulation of some job scheduling algorithms, including job running information：
+#### 2.2.4 Scheduler_simulation/*
+The code in this directory focuses on the simulation of some job scheduling algorithms, including data (data.csv, real-work job running information). 
 
+ - @usage: python Scheduling.py
+   
  - Scheduling.py:\
-   evaluate the strengths and weaknesses of each scheduling algorithm using information from job runs over a period of time
+   evaluate the strengths and weaknesses of each scheduling algorithm using information from job runs over a period of time.
+
+ - data.csv:\
+   job running information for a period of time
 
 #### 2.2.5 IO_Benchmark/*
- - Two C language programs under the folder are codes for parallel read and write operations on files in n-1 mode, and run.sh is a shell script file for compiling and submitting the two programs.
+Two C language programs under the folder are codes for parallel I/O in N-1 I/O mode, and run.sh is a shell script  for compiling and submitting the two programs.
+ - @usage: sh run.sh
